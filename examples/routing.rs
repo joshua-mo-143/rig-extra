@@ -1,4 +1,5 @@
 use rig::OneOrMany;
+use rig::client::{CompletionClient, EmbeddingsClient};
 use rig::embeddings::{Embedding, EmbeddingModel};
 use rig::providers::openai::client::Client;
 use rig::{
