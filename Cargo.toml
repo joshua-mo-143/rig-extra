@@ -31,6 +31,7 @@ thiserror = "2.0.12"
 tracing = "0.1.41"
 anyhow = "1.0.98"
 tokio = "1.45.1"
+tera = "1.20.0"
 
 # Candle
 candle-core = { version = "0.9.1", optional = true }
@@ -54,6 +55,7 @@ rig-core = { version = "0.13.0", features = ["derive"] }
 tokio = { version = "1.45.1", features = ["rt-multi-thread", "macros"] }
 tracing-subscriber = { version = "0.3.19", features = ["fmt"] }
 
+
 [features]
 default = ["providers"]
 providers = ["candle", "elevenlabs", "openai_realtime"]
@@ -65,6 +67,7 @@ candle = [
     "dep:tokenizers",
     "dep:serde_json",
 ]
-elevenlabs = ["rig-core/audio", "dep:reqwest"]
+elevenlabs = ["audio", "dep:reqwest"]
 openai_realtime = ["dep:reqwest", "dep:reqwest-websocket"]
 image = ["rig-core/image"]
+audio = ["rig-core/audio"]

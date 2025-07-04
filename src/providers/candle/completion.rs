@@ -414,6 +414,7 @@ where
     }
 }
 
+#[cfg(feature = "audio")]
 impl<T> AsAudioGeneration for Client<T>
 where
     T: CandleModel + std::fmt::Debug + Clone + Send + Sync,
@@ -426,7 +427,7 @@ where
 }
 
 #[cfg(feature = "image")]
-impl<T> AsImageGeneration for Client<T>
+impl<T> rig::client::AsImageGeneration for Client<T>
 where
     T: CandleModel + std::fmt::Debug + Clone + Send + Sync,
 {
