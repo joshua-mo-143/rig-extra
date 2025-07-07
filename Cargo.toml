@@ -17,7 +17,11 @@ name = "elevenlabs"
 required-features = []
 
 [[example]]
-name = "openai_rt"
+name = "openai_rt_cpal"
+required-features = []
+
+[[example]]
+name = "openai_rt_simple"
 required-features = []
 
 [[example]]
@@ -45,14 +49,22 @@ reqwest = { version = "0.12.20", features = ["json"], optional = true }
 
 # Required for OpenAI Realtime API
 reqwest-websocket = { version = "0.5.0", features = ["json"], optional = true }
+rubato = "0.16.2"
 
 [dev-dependencies]
-base64 = "0.22.1"
-byteorder = "1.5.0"
-hound = "3.5.1"
 rig-core = { version = "0.13.0", features = ["derive"] }
 tokio = { version = "1.45.1", features = ["rt-multi-thread", "macros"] }
 tracing-subscriber = { version = "0.3.19", features = ["fmt"] }
+
+# required for openAI realtime shenanigans
+base64 = "0.22.1"
+bytemuck = "1.23.1"
+byteorder = "1.5.0"
+cpal = "0.16.0"
+hound = "3.5.1"
+realfft = "3.5.0"
+ringbuf = "0.4.8"
+rodio = "0.20.1"
 
 [features]
 default = ["providers"]
